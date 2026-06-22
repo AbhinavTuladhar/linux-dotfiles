@@ -12,8 +12,8 @@
     // }
     "source": "~/.config/fastfetch/catppuccin.png",
     "type": "kitty",
-    "height": 12,
-    "width": 26,
+    "height": 18,
+    "width": 34,
     "padding": {
       "top": 4,
       "left": 4,
