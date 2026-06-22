@@ -1,0 +1,11 @@
+
+overview {
+    backdrop-color "#363a4f"
+
+    workspace-shadow {
+        softness 300
+        spread 5
+        offset x=0 y=0
+        color "#16161d"
+    }
+}
