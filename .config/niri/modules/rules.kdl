@@ -51,7 +51,7 @@ window-rule {
 // Increase opacity of vscode and antigravity
 window-rule {
     match app-id="^(code|antigravity.*)$"
-    opacity 0.95
+    opacity 0.925
     background-effect {
         xray true
         blur true
