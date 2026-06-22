@@ -1,0 +1,6 @@
+allow_images=true
+image_size=40
+term=kitty
+insensitive=true
+location=center
+prompt=search
