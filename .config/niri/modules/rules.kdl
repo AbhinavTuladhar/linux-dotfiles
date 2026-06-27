@@ -48,9 +48,9 @@ window-rule {
     }
 }
 
-// Increase opacity of vscode and antigravity
+// Increase opacity of vscode and antigravity and slack
 window-rule {
-    match app-id="^(code|antigravity.*)$"
+    match app-id="^(slack|code|antigravity.*)$"
     opacity 0.925
     background-effect {
         xray true
@@ -91,3 +91,5 @@ layer-rule {
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
 prefer-no-csd
+
+

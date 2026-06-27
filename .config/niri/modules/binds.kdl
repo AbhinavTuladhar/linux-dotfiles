@@ -10,7 +10,7 @@ binds {
     // `niri msg action do-something`.
 
     Mod+B { spawn-sh "brave";  }
-    Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+S { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+L { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+T { spawn "kitty"; }
 

@@ -154,3 +154,4 @@ fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
 [[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
 
 # zprof
+zstyle ':completion:*' group-name '' 
