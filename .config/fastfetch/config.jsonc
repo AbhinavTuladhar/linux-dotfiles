@@ -10,10 +10,17 @@
     //     "4": "blue",
     //     "5": "green"
     // }
-    "source": "~/.config/fastfetch/catppuccin.png",
-    "type": "kitty",
-    "height": 18,
-    "width": 34,
+    // "source": "~/.config/fastfetch/catppuccin.png",
+    // "type": "kitty",
+    // "height": 18,
+    // "width": 34,
+    // "padding": {
+    //   "top": 4,
+    //   "left": 4,
+    // },
+
+    "type": "command-raw",
+    "source": "pokemon-colorscripts --r 1-7",
     "padding": {
       "top": 4,
       "left": 4,

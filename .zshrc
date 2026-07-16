@@ -137,8 +137,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-pokemon-colorscripts -r 1-7
-fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
 # bun completions
 # [ -s "/home/abhinavtuladhar/.bun/_bun" ] && source "/home/abhinavtuladhar/.bun/_bun"
 
@@ -155,3 +153,8 @@ fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
 
 # zprof
 zstyle ':completion:*' group-name '' 
+
+# ON STARTUP
+# pokemon-colorscripts -r 1-7
+fastfetch
+fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`

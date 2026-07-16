@@ -50,23 +50,52 @@ window-rule {
 
 // Increase opacity of vscode and antigravity and slack
 window-rule {
-    match app-id="^(slack|code|antigravity.*)$"
-    opacity 0.925
+    match app-id="^(code|antigravity.*)$"
+    opacity 0.99
     background-effect {
-        xray true
-        blur true
+        xray false
+        blur false 
     }
 }
 
-// Disable blur for browsers
 window-rule {
-    match app-id="^(firefox.*|brave.*)$"
+    match app-id="^(slack.*)$"
+    opacity 0.95
+    background-effect {
+        blur true
+        xray true
+    }
+  }
+
+// Disable blur 
+window-rule {
+    match app-id="^(webkit.*|video-player.*|web.*|epiphany.*|firefox.*|brave.*|ONLYOFFICE.*|microsoft-edge.*)$"
     opacity 1.0
 }
 
-// Blur the backgroudn behind Noctalia popup menus
+// Blur the background behind Noctalia popup menus
 layer-rule {
     match namespace="^(noctalia-background.*)$"
+    opacity 0.85
+    background-effect {
+        blur true
+        xray false
+        noise 0.01
+        saturation 2
+    }
+    popups {
+        opacity 0.9
+        background-effect {
+            blur true
+	    xray false
+	    noise 0.01
+            saturation 2
+        }
+    }
+}
+
+layer-rule {
+    match namespace="^(noctalia-launcher.*)$"
     opacity 0.85
     background-effect {
         blur true
