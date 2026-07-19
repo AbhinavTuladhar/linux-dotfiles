@@ -1,0 +1,523 @@
+[backdrop]
+blur_intensity = 0.0
+tint_intensity = 0.0
+
+[bar.default]
+background_opacity = 0.4999999888241291
+border = "primary"
+border_width = 1.0
+capsule = true
+capsule_fill = "on_secondary"
+capsule_opacity = 0.34999999217689037
+capsule_radius = 6
+capsule_thickness = 0.69999998807907104
+center = [ "clock", "workspaces" ]
+end = [ "media", "audio_visualizer", "tray", "group:g4", "group:g1", "group:g5", "session", "control-center" ]
+font_family = "Fira Sans"
+margin_edge = 8
+margin_ends = 8
+padding = 16
+panel_overlap = -2
+radius = 9
+shadow = false
+start = [ "launcher", "wallhaven", "wallpaper", "cat", "group:g2", "group:g3" ]
+
+    [bar.default.dead_zone]
+    command = "noctalia msg panel-toggle control-center"
+    scroll_down_command = "noctalia msg volume-down 2"
+    scroll_up_command = "noctalia msg volume-up 2"
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "on_primary"
+    id = "g1"
+    members = [ "network", "volume", "brightness", "battery" ]
+    opacity = 0.30000001192092896
+    padding = 10.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "on_secondary"
+    id = "g2"
+    members = [ "cpu", "ram" ]
+    opacity = 0.29999998211860657
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "on_secondary"
+    id = "g3"
+    members = [ "network_rx", "network_tx" ]
+    opacity = 0.34999999403953552
+    padding = 6.0
+    radius = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "on_secondary"
+    id = "g4"
+    members = [ "notifications", "clipboard" ]
+    opacity = 0.34999999403953552
+    padding = 6.0
+    radius = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "on_secondary"
+    id = "g5"
+    members = [ "widget", "recorder" ]
+    opacity = 0.34999999403953552
+    padding = 6.0
+    radius = 6.0
+
+[control_center]
+sidebar = "full"
+sidebar_section = "full"
+width = 1020
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+enabled = true
+reserve_space = false
+
+[hot_corners]
+enabled = true
+
+    [hot_corners.top_right]
+    action = "control_center"
+
+[location]
+auto_locate = true
+
+[lockscreen]
+allow_empty_password = true
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-widget-000000000000000c",
+    "lockscreen-widget-000000000000000b",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000006",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000007",
+    "lockscreen-widget-0000000000000008",
+    "lockscreen-widget-000000000000000a",
+    "lockscreen-widget-000000000000000d"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 680.0
+    cy = 645.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 88.0
+    box_width = 992.0
+    cx = 880.5
+    cy = 783.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface"
+        background_opacity = 0.0
+        background_radius = 0.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 16.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 120.0
+    box_width = 432.0
+    cx = 624.5
+    cy = 687.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "media_player"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        background_color = "surface"
+        background_opacity = 0.0
+        background_padding = 10
+        background_radius = 0
+        color = "on_surface"
+        font_family = ""
+        hide_when_no_media = false
+        layout = "horizontal"
+        shadow = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 32.0
+    box_width = 96.0
+    cx = 1280.5
+    cy = 171.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        background_opacity = 0.0
+        background_padding = 0
+        background_radius = 0
+        center_text = false
+        clock_style = "digital"
+        font_family = ""
+        format = "{:%H:%M:%S}"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 80.0
+    box_width = 176.0
+    cx = 1272.5
+    cy = 687.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        background_opacity = 0.0
+        background_radius = 0
+        forecast_days = 6
+        shadow = true
+        show_forecast = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 112.0
+    box_width = 368.0
+    cx = 976.5
+    cy = 687.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = false
+        background_opacity = 0.0
+        background_radius = 0
+        bands = 32
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
+    box_height = 32.0
+    box_width = 312.0
+    cx = 620.5
+    cy = 159.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
+        background = false
+        description = ""
+        title = "Welcome back, Abhinav Tuladhar!"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 48.0
+    box_width = 176.0
+    cx = 488.5
+    cy = 843.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
+        background = true
+        color = "primary"
+        command = "noctalia msg session logout"
+        glyph = "logout"
+        hover_background = "secondary"
+        label = "Logout"
+        variant = "outline"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
+    box_height = 48.0
+    box_width = 192.0
+    cx = 880.5
+    cy = 843.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
+        background = true
+        color = "primary"
+        command = "noctalia msg session reboot"
+        glyph = "reboot"
+        hover_background = "secondary"
+        label = "Reboot"
+        variant = "outline"
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000a]
+    box_height = 48.0
+    box_width = 192.0
+    cx = 1264.5
+    cy = 843.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000a.settings]
+        background = true
+        color = "error"
+        command = "noctalia msg session shutdown"
+        glyph = "shutdown"
+        hover_background = "error"
+        label = "Shutdown"
+        variant = "outline"
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000b]
+    box_height = 272.0
+    box_width = 1024.0
+    cx = 892.5
+    cy = 747.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000b.settings]
+        title = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000c]
+    box_height = 96.0
+    box_width = 888.0
+    cx = 892.5
+    cy = 171.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000c.settings]
+        title = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000d]
+    box_height = 40.0
+    box_width = 136.0
+    cx = 532.5
+    cy = 183.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000d.settings]
+        background = false
+        background_padding = 0
+        color = "secondary"
+        format = "{:%A, %B %d}"
+
+[nightlight]
+enabled = true
+
+[osd]
+position = "bottom_center"
+
+[plugins]
+enabled = [ "noctalia/bongocat", "noctalia/screen_recorder", "noctalia/wallhaven", "oldirtty/color_picker" ]
+
+[shell]
+font_family = "Fira Sans"
+password_style = "random"
+polkit_agent = true
+settings_show_advanced = true
+
+    [shell.animation]
+    speed = 0.5000000074505806
+
+    [shell.panel]
+    borders = false
+    clipboard_placement = "attached"
+    launcher_placement = "attached"
+    open_near_click_control_center = true
+    open_near_click_session = true
+    session_placement = "floating"
+    session_position = "center"
+    shadow = false
+
+    [shell.session]
+    grid_columns = 2
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 10.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 10.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 10.0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "destructive"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Catppuccin Lavender"
+mode = "dark"
+source = "community"
+
+[wallpaper]
+directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
+per_monitor_directories = true
+transition = [ "disc", "fade", "stripes", "wipe", "zoom" ]
+transition_duration = 2000
+
+    [wallpaper.automation]
+    enabled = true
+    interval_seconds = 60
+
+    [wallpaper.default]
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-w8o32q.jpg"
+
+    [wallpaper.last]
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
+
+    [wallpaper.monitor.eDP-1]
+    directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-395yoy.jpg"
+
+[widget.audio_visualizer]
+bands = 64
+capsule = true
+capsule_padding = 4
+centered = false
+mirrored = false
+width = 64
+
+[widget.battery]
+hide_when_full = true
+hide_when_plugged = true
+
+[widget.brightness]
+show_label = false
+
+[widget.cat]
+audio_spectrum = true
+capsule = true
+capsule_padding = 4
+color = "primary"
+font_family = "Adwaita Mono"
+input_devices = [ "/dev/input/by-id/*-event-*" ]
+scale = 2.0
+tappy_mode = true
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+font_family = "Fira Sans Medium"
+format = "{:%Y-%m-%d %A, %-I:%M %p}"
+
+[widget.cpu]
+display = "text"
+font_family = "Noto Sans Mono"
+
+[widget.launcher]
+custom_image = "/usr/share/icons/cachyos.svg"
+
+[widget.media]
+capsule = true
+capsule_padding = 10
+font_family = "Fira Sans Medium"
+hide_artist = true
+hide_when_no_media = true
+title_scroll = "always"
+
+[widget.network]
+show_label = false
+
+[widget.network_rx]
+display = "text"
+label_min_width = 48
+
+[widget.network_tx]
+display = "text"
+label_min_width = 48
+
+[widget.ram]
+display = "text"
+font_family = "Noto Sans Mono"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.session]
+glyph = "pokeball"
+
+[widget.volume]
+scroll_step = 2
+show_label = false
+
+[widget.wallhaven]
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.widget]
+type = "oldirtty/color_picker:widget"
+
+[widget.workspaces]
+hide_when_empty = true
+labels_only_when_occupied = true
+scale = 1.25
