@@ -35,7 +35,7 @@ window-rule {
     draw-border-with-background false
     opacity 0.9
     background-effect {
-        xray true
+        xray false 
         blur true
     }
     popups {
@@ -51,10 +51,10 @@ window-rule {
 // Increase opacity of vscode and antigravity and slack
 window-rule {
     match app-id="^(code|antigravity.*)$"
-    opacity 0.99
+    opacity 0.95
     background-effect {
         xray false
-        blur false 
+        blur true 
     }
 }
 
@@ -63,7 +63,7 @@ window-rule {
     opacity 0.95
     background-effect {
         blur true
-        xray true
+        xray false
     }
   }
 
@@ -74,9 +74,10 @@ window-rule {
 }
 
 // Blur the background behind Noctalia popup menus
+// for noctalia v4
 layer-rule {
     match namespace="^(noctalia-background.*)$"
-    opacity 0.85
+    opacity 0.9
     background-effect {
         blur true
         xray false
@@ -96,7 +97,7 @@ layer-rule {
 
 layer-rule {
     match namespace="^(noctalia-launcher.*)$"
-    opacity 0.85
+    opacity 1.0
     background-effect {
         blur true
         xray false
@@ -104,7 +105,7 @@ layer-rule {
         saturation 2
     }
     popups {
-        opacity 0.9
+        opacity 1.0
         background-effect {
             blur true
 	    xray false
@@ -112,7 +113,30 @@ layer-rule {
             saturation 2
         }
     }
+  }
+
+// Noctalia v5
+layer-rule {
+  match namespace="^(noctalia-bar.*)$"
+  opacity 0.9
+  background-effect {
+    blur true
+    xray false
+    noise 0.01
+    saturation 2
+  }
+  popups {
+    opacity 0.9
+    background-effect {
+      blur true
+      xray false
+      noise 0.01 
+      saturation 2
+    }
+  }
 }
+
+
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -122,3 +146,11 @@ layer-rule {
 prefer-no-csd
 
 
+// layer-rule {
+//     match namespace="^noctalia-wallpaper.*$"
+//     place-within-backdrop true
+// }
+
+// layout {
+//     background-color "transparent"
+// }
