@@ -69,7 +69,8 @@ window-rule {
 
 // Disable blur 
 window-rule {
-    match app-id="^(webkit.*|video-player.*|web.*|epiphany.*|firefox.*|brave.*|ONLYOFFICE.*|microsoft-edge.*)$"
+    match app-id="^(webkit.*|video-player.*|web.*|epiphany.*|firefox.*|brave.*|ONLYOFFICE.*|microsoft-edge.*|google-chrome.*)$"
+    match title="Wayland Output Mirror for eDP-1"
     opacity 1.0
 }
 

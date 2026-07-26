@@ -5,14 +5,14 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
 	output = "eDP-1",
-	mode = "preferred",
+	mode = "1920x1080",
 	position = "auto",
 	scale = 1,
 })
 hl.monitor({
 	output = "HDMI-A-1",
 	mode = "preferred",
-	position = "auto",
-	scale = 1,
+	position = "1920x0",
+	scale = 1.2,
 	-- mirror   = "eDP-1"
 })

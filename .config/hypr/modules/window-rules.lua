@@ -50,7 +50,7 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "^(code|antigravity.*)$" },
     no_blur = false,
-    opacity = "0.925 override 0.85 override 0.9 override"
+    opacity = "0.97 override 0.9 override 0.9 override"
 })
 
 -- Add blur to hyprpanel
