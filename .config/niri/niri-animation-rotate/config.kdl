@@ -1,0 +1,9 @@
+// niri-animation-rotate configuration
+// Uncomment and adjust options as needed:
+
+animation-dir "/home/abhinavtuladhar/.config/niri/niri-animation-rotate/animations"
+animation-target "/home/abhinavtuladhar/.config/niri/niri-animation-rotate/animation.kdl"
+cooldown-ms 5000
+duration-fallback-ms 1000
+random-order false
+mode "auto"
