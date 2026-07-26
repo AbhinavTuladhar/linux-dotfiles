@@ -283,4 +283,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    // For niri-animation-rotate
+    Mod+Shift+A { spawn-sh "echo 'next' | nc -U $HOME/.config/niri/niri-animation-rotate/control.sock"; }
+    Mod+Shift+D { spawn-sh "echo 'prev' | nc -U $HOME/.config/niri/niri-animation-rotate/control.sock"; }
 }

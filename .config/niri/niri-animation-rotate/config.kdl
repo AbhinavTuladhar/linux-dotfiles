@@ -6,4 +6,4 @@ animation-target "/home/abhinavtuladhar/.config/niri/niri-animation-rotate/anima
 cooldown-ms 5000
 duration-fallback-ms 1000
 random-order false
-mode "auto"
+mode "manual"
