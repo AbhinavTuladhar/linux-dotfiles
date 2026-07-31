@@ -153,8 +153,11 @@ esac
 
 # zprof
 zstyle ':completion:*' group-name '' 
+zstyle ':completion:*' menu yes select
+LISTMAX=-1
 
 # ON STARTUP
 # pokemon-colorscripts -r 1-7
 fastfetch
 fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
+

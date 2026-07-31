@@ -96,7 +96,7 @@ layer-rule {
     }
 }
 
-layer-rule {
+/- layer-rule {
     match namespace="^(noctalia-launcher.*)$"
     opacity 1.0
     background-effect {
@@ -117,7 +117,7 @@ layer-rule {
   }
 
 // Noctalia v5
-layer-rule {
+/- layer-rule {
   match namespace="^(noctalia-bar.*)$"
   opacity 0.9
   background-effect {
@@ -137,7 +137,41 @@ layer-rule {
   }
 }
 
+// FLoating Noctalia settings window
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+    opacity 0.85
+    background-effect {
+        blur true
+    }
+}
 
+/*
+  Noctalia
+  Disable xray on all our surfaces so it looks more realistic.
+  Noctalia publishes blur regions automatically when ext-background-effects is available.
+*/
+layer-rule {
+  // match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  match namespace="^noctalia-(bar-[^\"]+|panel|notification|osd)$"
+  background-effect {
+    xray false
+    blur true
+  }
+}
+
+/* Enable blur and xray on noctalia's window switcher. */
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    opacity 0.9
+    background-effect {
+        blur true
+        xray true
+    }
+}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -155,3 +189,9 @@ prefer-no-csd
 // layout {
 //     background-color "transparent"
 // }
+//
+
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}

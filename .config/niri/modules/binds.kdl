@@ -13,7 +13,7 @@ binds {
     Mod+S { spawn-sh "noctalia msg panel-toggle launcher || qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+L { spawn-sh "noctalia msg session lock || qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+T { spawn "kitty"; }
-
+    Alt+tab { spawn-sh "noctalia msg window-switcher"; }
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+Shift+Slash { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
@@ -53,8 +53,8 @@ binds {
     Mod+Q repeat=false { close-window; }
 
     Mod+Left  { focus-column-or-monitor-left; }
-    Mod+Down  { focus-window-or-workspace-down; }
-    Mod+Up    { focus-window-or-workspace-up; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-or-monitor-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
