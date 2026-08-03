@@ -58,11 +58,11 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 -- Scroll through existing workspaces with mainMod + scroll and mainMod + PageUp/Down
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + Prior",      hl.dsp.focus({ workspace = "e-1"}))
-hl.bind(mainMod .. " + Next",       hl.dsp.focus({ workspace = "e+1"}))
+hl.bind(mainMod .. " + Prior",      hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + Next",       hl.dsp.focus({ workspace = "e+1" }))
 
-hl.bind(mainMod .. " + SHIFT + LEFT",  hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + SHIFT + LEFT",  hl.dsp.focus({ monitor = "-1" }))
+hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.focus({ monitor = "+1" }))
 
 -- Move active window to the left/right/top/bottom of current workspace
 hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.move({ direction = "l" }))
@@ -126,3 +126,5 @@ hl.bind("SUPER + tab", function ()
 
     hl.workspace_rule({ workspace = workspace.name, layout = next_layout })
 end)
+
+
