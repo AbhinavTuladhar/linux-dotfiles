@@ -1,5 +1,5 @@
 .config/noctalia/**
-!.config/noctalia/noctalia-config.toml
+!.config/noctalia/config.toml
 
 strawberry/
 control.sock
