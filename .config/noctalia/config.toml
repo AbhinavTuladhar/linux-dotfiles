@@ -1,3 +1,6 @@
+config_version = 12
+theconfig_version = 12
+
 [bar.default]
 background_opacity = 0.74999998323619366
 border = "primary"
@@ -621,10 +624,8 @@ settings_show_advanced = true
     direction = "center"
 
 [theme]
-builtin = "Catppuccin"
-community_palette = "Catppuccin Lavender"
+community_palette = "Catppuccin Macchiato Blue"
 mode = "dark"
-source = "community"
 
 [wallpaper]
 directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
@@ -640,7 +641,7 @@ transition_duration = 2000
     path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-0j2qxy.png"
 
     [wallpaper.last]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/Screenshot (19).png"
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
 
     [wallpaper.monitor.DP-2]
     directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
@@ -649,19 +650,16 @@ transition_duration = 2000
     directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/Screenshot (19).png"
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/abhinavtuladhar/Pictures/Wallpapers/wp11541537-the-legend-of-heroes-trails-from-zero-wallpapers.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/hyprland-mascot.webp"
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-395yoy.jpg"
 
     [[wallpaper.favorite]]
-    builtin_palette = "Ayu"
-    palette_source = "builtin"
     path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
-    theme_mode = "dark"
 
 [widget.audio_visualizer]
 bands = 64
@@ -774,3 +772,6 @@ type = "oldirtty/color_picker:widget"
 hide_when_empty = true
 labels_only_when_occupied = true
 pill_scale = 0.80000000000000004
+
+[audio] 
+enable_overdrive = true
