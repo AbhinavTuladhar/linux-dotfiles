@@ -658,9 +658,6 @@ transition_duration = 2000
     [wallpaper.monitors.eDP-1]
     path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-395yoy.jpg"
 
-    [[wallpaper.favorite]]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
-
 [widget.audio_visualizer]
 bands = 64
 capsule = true

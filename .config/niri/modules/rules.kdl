@@ -76,7 +76,7 @@ window-rule {
 
 // Blur the background behind Noctalia popup menus
 // for noctalia v4
-layer-rule {
+/- layer-rule {
     match namespace="^(noctalia-background.*)$"
     opacity 0.9
     background-effect {
@@ -143,9 +143,18 @@ window-rule {
     open-floating true
     default-column-width { fixed 1080; }
     default-window-height { fixed 920; }
-    opacity 0.85
+    opacity 0.9
     background-effect {
         blur true
+    }
+
+    popups {
+        opacity 1.0
+        background-effect {
+            blur false
+            noise 0.01
+            saturation 1
+        }
     }
 }
 
@@ -190,6 +199,12 @@ prefer-no-csd
 //     background-color "transparent"
 // }
 //
+
+// Make certain window floating by default.
+window-rule {
+    match app-id="thunar" title="^Rename"
+    open-floating true
+}
 
 layer-rule {
   match namespace="^noctalia-backdrop"
