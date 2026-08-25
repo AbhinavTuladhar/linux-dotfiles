@@ -20,7 +20,7 @@
     // },
 
     "type": "command-raw",
-    "source": "pokemon-colorscripts --r 1-7",
+    "source": "pokemon-colorscripts --no-title -r 1-7",
     "padding": {
       "top": 4,
       "left": 4,

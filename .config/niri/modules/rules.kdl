@@ -59,8 +59,8 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^(slack.*)$"
-    opacity 0.95
+    match app-id="^(slack.*)|(dev.zed.Zed)$"
+    opacity 0.98
     background-effect {
         blur true
         xray false
