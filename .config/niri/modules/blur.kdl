@@ -8,7 +8,7 @@
 
 blur {
     passes 2
-    offset 5
+    offset 4
     noise 0.03
-    saturation 1
+    saturation 1.5
 }

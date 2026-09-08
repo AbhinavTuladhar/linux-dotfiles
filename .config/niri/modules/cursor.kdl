@@ -1,4 +1,3 @@
 cursor {
-    hide-after-inactive-ms 60000
     xcursor-theme "catppuccin-macchiato-sapphire-cursors"
 }
