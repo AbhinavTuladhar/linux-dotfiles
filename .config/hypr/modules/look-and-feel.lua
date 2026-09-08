@@ -30,7 +30,7 @@ hl.config({
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 0.9,
-        inactive_opacity = 0.85,
+        inactive_opacity = 0.9,
 
         shadow = {
             enabled      = false,
@@ -59,16 +59,30 @@ hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}   
 hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 
--- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("linear",          { type = "bezier", points = { { 0,    0 },    { 1,    1 } }    })
+hl.curve("md3_standard",    { type = "bezier", points = { { 0.2,  0 },    { 0,    1 } }    })
+hl.curve("md3_decel",       { type = "bezier", points = { { 0.05, 0.7 },  { 0.1,  1 } }    })
+hl.curve("md3_accel",       { type = "bezier", points = { { 0.3,  0 },    { 0.8,  0.15 } } })
+hl.curve("overshot",        { type = "bezier", points = { { 0.05, 0.9 },  { 0.1,  1.1 } }  })
+hl.curve("crazyshot",       { type = "bezier", points = { { 0.1,  1.5 },  { 0.76, 0.92 } } })
+hl.curve("hyprnostretch",   { type = "bezier", points = { { 0.05, 0.9 },  { 0.1,  1.0 } }  })
+hl.curve("menu_decel",      { type = "bezier", points = { { 0.1,  1 },    { 0,    1 } }    })
+hl.curve("menu_accel",      { type = "bezier", points = { { 0.38, 0.04 }, { 1,    0.07 } } })
+hl.curve("easeInOutCirc",   { type = "bezier", points = { { 0.85, 0 },    { 0.15, 1 } }    })
+hl.curve("easeOutCirc",     { type = "bezier", points = { { 0,    0.55 }, { 0.45, 1 } }    })
+hl.curve("easeOutExpo",     { type = "bezier", points = { { 0.16, 1 },    { 0.3,  1 } }    })
+hl.curve("softAcDecel",     { type = "bezier", points = { { 0.26, 0.26 }, { 0.15, 1 } }    })
+hl.curve("md2",             { type = "bezier", points = { { 0.4,  0 },    { 0.2,  1 } }    })
 
+-- Default springs
+hl.curve("easy",           { type = "spring", mass = 1, stiffness = 180, dampening = 26.833 })
 hl.curve('spring',         { type = "spring", mass = 1, stiffness = 180, dampening = 10 }) 
 
-hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
+hl.animation({ leaf = "global",        enabled = true,  speed = 10,   spring = "easy" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 2.1,  spring = "easy",         style = "popin 87%" })
-hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 2.1,  spring = "easy",          })
+hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, spring = "easy",        })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
 hl.animation({ leaf = "fade",          enabled = true,  speed = 3.03, bezier = "quick" })
@@ -78,8 +92,8 @@ hl.animation({ leaf = "layersOut",     enabled = true,  speed = 1.5,  bezier = "
 hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
 hl.animation({ leaf = "workspaces",    enabled = true,  speed = 0.9,    spring = "easy", style='slidevert' })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 0.9,    spring = "easy", style='slidevert' })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 0.9,    spring = "easy", style='slidevert' })
+hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 10,    spring = "easy", style='slidevert' })
+hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 10,    spring = "easy", style='slidevert' })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
