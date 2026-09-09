@@ -10,23 +10,23 @@ Notes:
 
 animations {
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0002
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0002
     }
 
     horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0001
     }
 
     window-movement {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0001
     }
 
     config-notification-open-close {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0001
     }
 
     exit-confirmation-open-close {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0001
     }
 
     screenshot-ui-open {
@@ -35,11 +35,11 @@ animations {
     }
 
     overview-open-close {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0001
     }
 
     recent-windows-close {
-        spring damping-ratio=1.0 stiffness=180 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=150 epsilon=0.0001
     }
     // Uncomment while tuning.
     // slowdown 1.5

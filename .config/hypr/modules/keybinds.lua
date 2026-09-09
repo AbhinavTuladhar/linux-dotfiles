@@ -23,11 +23,8 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/de
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.center())
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd('caelestia shell lock lock'))
-hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd('caelestia shell drawers toggle session'))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(musicPlayer))
 
@@ -49,17 +46,17 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + R",         hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + ALT   + R",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Full screen
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Scroll through existing workspaces with mainMod + scroll and mainMod + PageUp/Down
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + Prior",      hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + Next",       hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + Prior",      hl.dsp.focus({ workspace = "r-1" }))
+hl.bind(mainMod .. " + Next",       hl.dsp.focus({ workspace = "r+1" }))
 
 hl.bind(mainMod .. " + SHIFT + LEFT",  hl.dsp.focus({ monitor = "-1" }))
 hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.focus({ monitor = "+1" }))
@@ -85,6 +82,9 @@ hl.bind(mainMod .. " + CTRL + Prior", hl.dsp.window.move({ workspace = "r-1", fo
 -- Kando
 hl.bind(mainMod .. " + Space", hl.dsp.global("menu.kando.Kando:example-menu"))
 
+-- Change column size for scrolling layout
+hl.bind(mainMod .. " + R", hl.dsp.layout('colresize +conf'))
+hl.bind(mainMod .. " + F", hl.dsp.layout('colresize 1.0'))
 
 -- Resize windows using keyboard
 -- hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.resize({ direction = "l", step = 80 }))
@@ -128,3 +128,16 @@ hl.bind("SUPER + tab", function ()
 end)
 
 
+-- Caelestia shell binds
+-- hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher"))
+-- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd('caelestia shell lock lock'))
+-- hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd('caelestia shell drawers toggle session'))
+
+hl.bind(mainMod .. " + S", hl.dsp.global("caelestia shell drawers toggle launcher"))
+hl.bind(mainMod .. " + L", hl.dsp.global('caelestia shell lock lock'))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.global('caelestia:session'))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd('caelestia shell lock lock'))
+hl.bind(mainMod .. " + X", hl.dsp.global('caelestia:utilities'))
+hl.bind(mainMod .. " + D", hl.dsp.global('caelestia:dashboard'))
+hl.bind(mainMod .. " + M", hl.dsp.global('caelestia:sidebar'))
+hl.bind(mainMod .. " + W", hl.dsp.global('caelestia:controlCenter'))

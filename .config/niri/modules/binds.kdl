@@ -9,18 +9,23 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
-    Mod+B { spawn-sh "brave";  }
-    Mod+E { spawn-sh "thunar";  }
+    // Noctalia-related binds
     Mod+S { spawn-sh "noctalia msg panel-toggle launcher || qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+L { spawn-sh "noctalia msg session lock || qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+Shift+Slash { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
+    Mod+Alt+L { spawn-sh "noctalia msg panel-toggle session || qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+X { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+D { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+C { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    // Alt+tab { spawn-sh "noctalia msg window-switcher"; }
+
+    Mod+B { spawn-sh "brave";  }
+    Mod+E { spawn-sh "thunar";  }
     Mod+T { spawn "kitty"; }
-    Alt+tab { spawn-sh "noctalia msg window-switcher"; }
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
-    Mod+Shift+Slash { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Alt+L { spawn-sh "noctalia msg panel-toggle session || qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
     Mod+Alt+S allow-when-locked=true { spawn-sh "pkill orca || exec orca"; }
 
@@ -226,7 +231,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
+    Mod+Alt+C { center-column; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
