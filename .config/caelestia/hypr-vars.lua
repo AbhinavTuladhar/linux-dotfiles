@@ -1,0 +1,4 @@
+return {
+    -- Blur
+    blurEnabled                = false,
+}
