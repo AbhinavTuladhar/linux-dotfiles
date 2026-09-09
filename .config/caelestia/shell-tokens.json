@@ -1,0 +1,10 @@
+{
+  "appearance": {
+    "padding": 0
+  },
+  "sizes": {
+    "bar": {
+      "innerWidth": 24
+    }
+  }
+}
