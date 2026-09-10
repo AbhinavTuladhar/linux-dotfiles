@@ -163,3 +163,4 @@ fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
 
 eval "$(zoxide init zsh)"
 
+export EDITOR="nvim"
