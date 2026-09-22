@@ -82,7 +82,7 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080"
+    mode "1920x1080@144"
     // mode "1680x1050"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
@@ -105,10 +105,8 @@ output "eDP-1" {
 }
 
 output "HDMI-A-1" {
-    // mode "1280x800"
-    // mode "1280x1024"
-    // scale 1.325
-    scale 1.325
+    mode "1920x1080@60.0000"
+    scale 1.25
     position x=-1920 y=0
 }
 
