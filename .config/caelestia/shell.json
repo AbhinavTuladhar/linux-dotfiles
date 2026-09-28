@@ -9,9 +9,9 @@
         },
         "pitchBlack": false,
         "transparency": {
-            "base": 0.7503368712308113,
+            "base": 0.8,
             "enabled": true,
-            "layers": 0.7969066419099506
+            "layers": 1
         }
     },
     "background": {
