@@ -34,5 +34,8 @@ hl.config({
     scrolling = {
         column_width = 1.0,
         explicit_column_widths = "0.5, 0.667, 1.0"
-    }
+    },
+	debug = {
+		disable_scale_checks = true,
+	},
 })
