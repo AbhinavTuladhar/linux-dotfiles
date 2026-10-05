@@ -1,5 +1,10 @@
-config_version = 12
+config_version = 14
 theconfig_version = 12
+
+[backdrop]
+blur_intensity = 0.19999999552965164
+enabled = true
+tint_intensity = 0.0
 
 [bar.default]
 background_opacity = 0.74999998323619366
@@ -12,15 +17,17 @@ capsule_padding = 8.0
 capsule_radius = 6
 capsule_thickness = 0.74999998696148396
 center = [ "clock", "workspaces" ]
-end = [ "media", "tray", "group:g6", "group:g1", "group:g4", "group:g5", "keybinds" ]
+end = [ "audio_visualizer", "media", "tray", "group:g6", "group:g1", "group:g5", "keybinds" ]
 font_family = "Fira Sans"
-margin_edge = 8
+margin_edge = 0
 margin_ends = 8
 padding = 16
 panel_overlap = 0
-radius = 6
+radius = 80
+radius_top_left = 0
+radius_top_right = 0
 shadow = false
-start = [ "launcher", "group:g7", "cat", "group:g2", "group:g3", "audio_visualizer", "cat_2", "weather" ]
+start = [ "launcher", "group:g7", "cat", "group:g2", "group:g3", "cat_2", "weather" ]
 thickness = 32
 
     [bar.default.dead_zone.actions]
@@ -55,21 +62,11 @@ thickness = 32
     enabled = true
     fill = "on_secondary"
     id = "g1"
-    members = [ "network", "volume", "battery", "brightness" ]
+    members = [ "network", "volume", "battery", "brightness", "bluetooth" ]
     opacity = 0.0
     padding = 8.0
     radius = 6.0
-
-    [[bar.default.capsule_group]]
-    accordion = false
-    accordion_direction = "end"
-    enabled = true
-    fill = "on_secondary"
-    id = "g4"
-    members = [ "widget", "recorder" ]
-    opacity = 0.0
-    padding = 8.0
-    radius = 6.0
+    widget_spacing = 4
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -83,12 +80,12 @@ thickness = 32
     radius = 6.0
 
     [[bar.default.capsule_group]]
-    accordion = false
-    accordion_direction = "end"
+    accordion = true
+    accordion_direction = "start"
     enabled = true
     fill = "on_secondary"
     id = "g6"
-    members = [ "notifications", "clipboard" ]
+    members = [ "notifications", "widget", "recorder", "clipboard" ]
     opacity = 0.0
     padding = 8.0
     radius = 6.0
@@ -111,19 +108,93 @@ width = 1020
 
 [desktop_widgets]
 schema_version = 2
-widget_order = []
+widget_order = [
+    "desktop-widget-0000000000000001",
+    "desktop-widget-0000000000000002",
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000004"
+]
 
     [desktop_widgets.grid]
-    cell_size = 16
+    cell_size = 8
     major_interval = 4
     visible = true
 
-    [desktop_widgets.widget]
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 336.0
+    box_width = 1792.0
+    cx = 872.4998779296875
+    cy = 818.9998779296875
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        bands = 128
+        centered = false
+        mirrored = false
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 408.0
+    box_width = 1936.0
+    cx = 944.0
+    cy = 879.99993896484375
+    output = "DP-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = false
+        bands = 128
+        centered = false
+        mirrored = false
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 80.0
+    box_width = 424.0
+    cx = 244.5
+    cy = 195.0
+    enabled = false
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "yocraft/desktop-launcher:widget"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        apps = [ "kitty", "brave-browser", "code", "slack", "firefox" ]
+        background = false
+        columns = 8
+        grid_layout = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 80.0
+    box_width = 424.0
+    cx = 248.0
+    cy = 196.0
+    output = "DP-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "yocraft/desktop-launcher:widget"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        apps = [ "kitty", "brave-browser", "code", "slack", "firefox" ]
+        background = false
+        columns = 8
+        grid_layout = true
 
 [dock]
 active_monitor_only = true
 auto_hide = true
-enabled = true
+enabled = false
 launcher_position = "start"
 reserve_space = false
 
@@ -134,37 +205,33 @@ enabled = true
     action = "control_center"
 
 [location]
-auto_locate = true
+address = "Lagankhel"
+auto_locate = false
 
 [lockscreen]
 allow_empty_password = true
 fingerprint = false
+transition = [ "disc", "honeycomb", "stripes", "wipe" ]
+transition_duration = 1100
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
 widget_order = [
     "lockscreen-login-box@DP-2",
-    "lockscreen-widget-000000000000000c",
     "lockscreen-login-box@HDMI-A-1",
     "lockscreen-login-box@eDP-1",
-    "lockscreen-widget-0000000000000002",
-    "lockscreen-widget-0000000000000006",
-    "lockscreen-widget-0000000000000007",
-    "lockscreen-widget-0000000000000008",
-    "lockscreen-widget-000000000000000a",
-    "lockscreen-widget-000000000000000d",
-    "lockscreen-widget-000000000000000e",
     "lockscreen-widget-000000000000000f",
-    "lockscreen-widget-0000000000000010",
-    "lockscreen-widget-0000000000000011",
-    "lockscreen-widget-0000000000000012",
-    "lockscreen-widget-0000000000000013",
     "lockscreen-widget-0000000000000014",
     "lockscreen-widget-0000000000000015",
     "lockscreen-widget-0000000000000016",
     "lockscreen-widget-0000000000000017",
-    "lockscreen-widget-0000000000000018"
+    "lockscreen-widget-0000000000000018",
+    "lockscreen-widget-0000000000000019",
+    "lockscreen-widget-000000000000001a",
+    "lockscreen-widget-000000000000001b",
+    "lockscreen-widget-000000000000001c",
+    "lockscreen-widget-000000000000001d"
 ]
 
     [lockscreen_widgets.grid]
@@ -175,9 +242,11 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
     box_height = 196.0
     box_width = 720.0
-    cx = 912.0
+    cx = 911.9998779296875
     cy = 870.0
     output = "DP-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -199,10 +268,12 @@ widget_order = [
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
     box_height = 196.0
-    box_width = 952.0
-    cx = 736.5
-    cy = 653.5
+    box_width = 928.0
+    cx = 752.0
+    cy = 726.0
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "login_box"
 
@@ -225,9 +296,11 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 864.5
-    cy = 779.0
+    cx = 880.5
+    cy = 861.0
     output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
     rotation = 0.0
     type = "login_box"
 
@@ -247,142 +320,14 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-    box_height = 32.0
-    box_width = 96.0
-    cx = 1280.5
-    cy = 171.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "clock"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
-        background = false
-        background_opacity = 0.0
-        background_padding = 0
-        background_radius = 0
-        center_text = false
-        clock_style = "digital"
-        font_family = ""
-        format = "{:%H:%M:%S}"
-        shadow = false
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
-    box_height = 32.0
-    box_width = 312.0
-    cx = 620.5
-    cy = 159.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "label"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
-        background = false
-        description = ""
-        title = "Welcome back, Abhinav Tuladhar!"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
-    box_height = 48.0
-    box_width = 176.0
-    cx = 504.5
-    cy = 923.0
-    enabled = false
-    output = "eDP-1"
-    rotation = 0.0
-    type = "button"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
-        background = true
-        color = "primary"
-        command = "noctalia msg session logout"
-        glyph = "logout"
-        hover_background = "secondary"
-        label = "Logout"
-        variant = "outline"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
-    box_height = 56.0
-    box_width = 192.0
-    cx = 880.5
-    cy = 923.0
-    enabled = false
-    output = "eDP-1"
-    rotation = 0.0
-    type = "button"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
-        background = true
-        color = "primary"
-        command = "noctalia msg session reboot"
-        glyph = "reboot"
-        hover_background = "secondary"
-        label = "Reboot"
-        variant = "outline"
-
-    [lockscreen_widgets.widget.lockscreen-widget-000000000000000a]
-    box_height = 48.0
-    box_width = 192.0
-    cx = 1232.5
-    cy = 927.0
-    enabled = false
-    output = "eDP-1"
-    rotation = 0.0
-    type = "button"
-
-        [lockscreen_widgets.widget.lockscreen-widget-000000000000000a.settings]
-        background = true
-        color = "error"
-        command = "noctalia msg session shutdown"
-        glyph = "shutdown"
-        hover_background = "error"
-        label = "Shutdown"
-        variant = "outline"
-
-    [lockscreen_widgets.widget.lockscreen-widget-000000000000000c]
-    box_height = 96.0
-    box_width = 888.0
-    cx = 892.5
-    cy = 171.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "label"
-
-        [lockscreen_widgets.widget.lockscreen-widget-000000000000000c.settings]
-        title = ""
-
-    [lockscreen_widgets.widget.lockscreen-widget-000000000000000d]
-    box_height = 40.0
-    box_width = 136.0
-    cx = 532.5
-    cy = 183.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "clock"
-
-        [lockscreen_widgets.widget.lockscreen-widget-000000000000000d.settings]
-        background = false
-        background_padding = 0
-        color = "secondary"
-        format = "{:%A, %B %d}"
-
-    [lockscreen_widgets.widget.lockscreen-widget-000000000000000e]
-    box_height = 96.0
-    box_width = 888.0
-    cx = 724.5
-    cy = 199.5
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "label"
-
-        [lockscreen_widgets.widget.lockscreen-widget-000000000000000e.settings]
-        title = ""
-
     [lockscreen_widgets.widget.lockscreen-widget-000000000000000f]
     box_height = 32.0
     box_width = 96.0
-    cx = 1112.5
-    cy = 199.5
+    cx = 1780.000244140625
+    cy = 319.20004272460938
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "clock"
 
@@ -397,74 +342,14 @@ widget_order = [
         format = "{:%H:%M:%S}"
         shadow = false
 
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000010]
-    box_height = 32.0
-    box_width = 312.0
-    cx = 452.5
-    cy = 187.5
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "label"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000010.settings]
-        background = false
-        description = ""
-        title = "Welcome back, Abhinav Tuladhar!"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000011]
-    box_height = 40.0
-    box_width = 136.0
-    cx = 364.5
-    cy = 211.5
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "clock"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000011.settings]
-        background = false
-        background_padding = 0
-        color = "secondary"
-        format = "{:%A, %B %d}"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000012]
-    box_height = 296.0
-    box_width = 1024.0
-    cx = 740.5
-    cy = 617.5
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "label"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000012.settings]
-        title = ""
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000013]
-    box_height = 120.0
-    box_width = 432.0
-    cx = 480.5
-    cy = 547.5
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "media_player"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000013.settings]
-        background = false
-        background_color = "surface"
-        background_opacity = 0.0
-        background_padding = 10
-        background_radius = 0
-        color = "on_surface"
-        font_family = ""
-        hide_when_no_media = false
-        layout = "horizontal"
-        shadow = true
-
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000014]
-    box_height = 112.0
-    box_width = 368.0
-    cx = 832.5
-    cy = 547.5
+    box_height = 184.0
+    box_width = 928.0
+    cx = 752.0
+    cy = 484.0
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "audio_visualizer"
 
@@ -472,15 +357,19 @@ widget_order = [
         background = false
         background_opacity = 0.0
         background_radius = 0
-        bands = 32
+        bands = 72
+        centered = false
+        mirrored = false
         show_when_idle = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000015]
     box_height = 80.0
     box_width = 176.0
-    cx = 1128.5
-    cy = 547.5
+    cx = 1805.5999755859375
+    cy = 876.0001220703125
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "weather"
 
@@ -495,9 +384,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000016]
     box_height = 48.0
     box_width = 176.0
-    cx = 352.5
-    cy = 719.5
+    cx = 564.0
+    cy = 1151.1998291015625
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "button"
 
@@ -513,9 +404,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000017]
     box_height = 48.0
     box_width = 192.0
-    cx = 732.5
-    cy = 719.5
+    cx = 1172.0
+    cy = 1151.1998291015625
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "button"
 
@@ -531,9 +424,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000018]
     box_height = 48.0
     box_width = 192.0
-    cx = 1116.5
-    cy = 719.5
+    cx = 1786.4000244140625
+    cy = 1151.1998291015625
     output = "HDMI-A-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "button"
 
@@ -546,30 +441,118 @@ widget_order = [
         label = "Shutdown"
         variant = "outline"
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000019]
+    box_height = 376.0
+    box_width = 536.0
+    cx = 880.5
+    cy = 347.0
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000019.settings]
+        title = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000001a]
+    box_height = 144.0
+    box_width = 392.0
+    cx = 880.5
+    cy = 227.0
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000001a.settings]
+        background = false
+        format = "{:%H:%M:%S}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000001b]
+    box_height = 24.0
+    box_width = 528.0
+    cx = 880.5
+    cy = 283.0
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000001b.settings]
+        background = false
+        format = "{:%a, %b %d}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000001c]
+    box_height = 200.0
+    box_width = 864.0
+    cx = 872.5
+    cy = 615.0
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000001c.settings]
+        background = false
+        bands = 64
+        centered = false
+        mirrored = false
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000001d]
+    box_height = 160.0
+    box_width = 472.0
+    cx = 876.5
+    cy = 427.0
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000001d.settings]
+        background = true
+        background_color = "surface_variant"
+        background_opacity = 1.0
+        background_padding = 8
+        display = "graph"
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
 [nightlight]
 enabled = true
-temperature_day = 7000
-temperature_night = 3000
+temperature_day = 5000
+temperature_night = 2000
 
 [osd]
 position = "bottom_center"
 
+[plugin_settings."noctalia/screen_recorder"]
+audio_source = "none"
+video_encoder = "cpu"
+
 [plugins]
 enabled = [
     "noctalia/bongocat",
-    "noctalia/screen_recorder",
     "noctalia/wallhaven",
     "oldirtty/color_picker",
     "dotnetrob/cat",
-    "apex077/eyecare"
+    "apex077/eyecare",
+    "yocraft/desktop-launcher",
+    "noctalia/screen_recorder"
 ]
 
 [shell]
-font_family = "Fira Sans"
+font_family = "IBM Plex Sans"
 niri_overview_type_to_launch_enabled = true
 password_style = "random"
 polkit_agent = true
 settings_show_advanced = true
+telemetry_enabled = true
 
     [shell.animation]
     speed = 0.5000000074505806
@@ -579,14 +562,15 @@ settings_show_advanced = true
     compact = true
 
     [shell.panel]
-    borders = false
+    borders = true
     clipboard_placement = "attached"
     launcher_placement = "attached"
     open_near_click_control_center = true
     open_near_click_session = true
-    session_placement = "floating"
+    session_placement = "attached"
     session_position = "center"
-    shadow = false
+    shadow = true
+    transparency_mode = "glass"
 
     [shell.session]
     grid_columns = 2
@@ -624,8 +608,10 @@ settings_show_advanced = true
     direction = "center"
 
 [theme]
+builtin = "Ayu"
 community_palette = "Catppuccin Macchiato Blue"
 mode = "dark"
+source = "community"
 
 [wallpaper]
 directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
@@ -638,10 +624,10 @@ transition_duration = 2000
     interval_seconds = 60
 
     [wallpaper.default]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-0j2qxy.png"
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/Trails-in-the-Sky-2nd-Chapter-Artwork-001.webp"
 
     [wallpaper.last]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wp11541537-the-legend-of-heroes-trails-from-zero-wallpapers.jpg"
 
     [wallpaper.monitor.DP-2]
     directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
@@ -650,13 +636,13 @@ transition_duration = 2000
     directory = "/home/abhinavtuladhar/Pictures/Wallpapers"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-4x379l.jpg"
-
-    [wallpaper.monitors.HDMI-A-1]
     path = "/home/abhinavtuladhar/Pictures/Wallpapers/wp11541537-the-legend-of-heroes-trails-from-zero-wallpapers.jpg"
 
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/Wallpaper new.png"
+
     [wallpaper.monitors.eDP-1]
-    path = "/home/abhinavtuladhar/Pictures/Wallpapers/wallhaven-395yoy.jpg"
+    path = "/home/abhinavtuladhar/Pictures/Wallpapers/Screenshot (19).png"
 
 [widget.audio_visualizer]
 bands = 64
@@ -695,7 +681,7 @@ show_cpu_percent = true
 type = "dotnetrob/cat:cat"
 
 [widget.clock]
-font_family = "JetBrains Mono"
+font_family = "CaskaydiaCove NF"
 format = "{:%Y-%m-%d %A, %-I:%M:%S %p}"
 
 [widget.keybinds]
@@ -707,9 +693,11 @@ custom_image = "/usr/share/icons/cachyos.svg"
 [widget.media]
 capsule = true
 capsule_padding = 10
-font_family = "Fira Sans"
+font_family = "JetBrains Mono"
+hide_album_art = true
 hide_artist = true
 hide_when_no_media = true
+show_progress = true
 title_scroll = "always"
 
 [widget.network]
@@ -727,7 +715,7 @@ label_min_width = 48
 
 [widget.ram]
 display = "text"
-font_family = "JetBrains Mono"
+font_family = "Iosevka NF"
 highlight_color = "tertiary"
 label_min_width = 64
 scale = 0.90000000000000002
@@ -741,7 +729,7 @@ glyph = "pokeball"
 
 [widget.temp]
 display = "text"
-font_family = "JetBrains Mono"
+font_family = "Iosevka NF"
 highlight_color = "primary"
 scale = 0.90000000000000002
 visualization = "none"
@@ -766,9 +754,8 @@ icon_color = "tertiary"
 type = "oldirtty/color_picker:widget"
 
 [widget.workspaces]
+active_pill_size = 2.5
+focused_output_only = true
 hide_when_empty = true
 labels_only_when_occupied = true
 pill_scale = 0.80000000000000004
-
-[audio] 
-enable_overdrive = true
