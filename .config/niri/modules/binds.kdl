@@ -17,7 +17,7 @@ binds {
     Mod+X { spawn-sh "noctalia msg settings-toggle"; }
     Mod+D { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+C { spawn-sh "noctalia msg panel-toggle clipboard"; }
-    // Alt+tab { spawn-sh "noctalia msg window-switcher"; }
+    Alt+tab { spawn-sh "noctalia msg window-switcher"; }
 
     Mod+B { spawn-sh "brave";  }
     Mod+E { spawn-sh "thunar";  }
@@ -33,7 +33,7 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
     // "-l 1.0" limits the volume to 100%.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
@@ -83,6 +83,8 @@ binds {
     Mod+End  { focus-column-last; }
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
+    Mod+Ctrl+KP_Home { move-column-to-first; }
+    Mod+Ctrl+KP_End  { move-column-to-last; }
 
     Mod+Shift+Left  { focus-monitor-left; }
     Mod+Shift+Down  { focus-monitor-down; }

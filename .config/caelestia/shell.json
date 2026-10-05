@@ -31,7 +31,7 @@
         "clock": {
             "background": true,
             "showDate": true,
-            "showIcon": false
+            "showIcon": true
         },
         "dragThreshold": 15,
         "entries": {
@@ -92,7 +92,11 @@
             "activeIndicator": true,
             "activeTrail": true,
             "occupiedBg": true,
-            "showWindows": true
+            "perMonitorWorkspaces": true,
+            "showWindows": true,
+            "showWindowsOnSpecialWorkspaces": true,
+            "shown": 5,
+            "useIcon": true
         }
     },
     "dashboard": {
@@ -118,7 +122,7 @@
         ],
         "brightnessIncrement": 0.02,
         "defaultPlayer": "Strawberry",
-        "smartScheme": true,
+        "smartScheme": false,
         "useFahrenheit": false,
         "useTwelveHourClock": true,
         "visualiserBars": 30
