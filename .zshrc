@@ -193,5 +193,9 @@ zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 ## Aliases
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias cat='bat'
 alias inv='nvim $(fzf --preview="bat --color=always {}")'
 alias update='sudo pacman -Syu'
