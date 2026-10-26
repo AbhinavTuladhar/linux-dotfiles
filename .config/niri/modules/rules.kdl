@@ -53,28 +53,19 @@ window-rule {
     }
 }
 
-// Increase opacity of vscode and antigravity and slack
+// Increase opacity of slack and code editors
 window-rule {
-    match app-id="^(code|antigravity.*)$"
+    match app-id="^(slack.*)|(dev.zed.Zed)|(com.microsoft.VSCode)$"
     opacity 0.95
-    background-effect {
-        xray false
-        blur true 
-    }
-}
-
-window-rule {
-    match app-id="^(slack.*)|(dev.zed.Zed)$"
-    opacity 0.98
     background-effect {
         blur true
         xray false
     }
   }
 
-// Disable blur 
+// Make windows fully opaque 
 window-rule {
-    match app-id="^(webkit.*|video-player.*|web.*|firefox.*|brave.*|ONLYOFFICE.*|microsoft-edge.*|google-chrome.*|btrfs-assistant.*|org\\.gnome\\.Epiphany)$"
+    match app-id="^(webkit.*|video-player.*|web.*|firefox.*|brave.*|ONLYOFFICE.*|microsoft-edge.*|google-chrome.*|btrfs-assistant.*|org\\.gnome\\.Epiphany|Azahar)$"
     match title="Wayland Output Mirror for eDP-1"
     opacity 1.0
 }
