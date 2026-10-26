@@ -1,0 +1,73 @@
+# Umbriel starting configuration
+#
+# Copy this file to ~/.config/umbriel/config.toml. Most changes apply when the
+# file is saved. Check edits with `umbriel config validate`.
+#
+# Complete reference: https://docs.noctalia.dev/umbriel/
+#
+# Commented settings below are examples, not built-in defaults.
+
+# ==============================================================================
+# Includes
+
+# Optional split configuration
+# https://docs.noctalia.dev/umbriel/configuration/#include
+[include]
+files = [
+    'animation.toml',
+    'appearance.toml',
+    'effects.toml',
+    'inputs.toml',
+    'keybinds.toml',
+    'layers.toml',
+    'outputs.toml',
+    'windows.toml',
+]
+
+[include.optional]
+files = []
+
+# ==============================================================================
+# General
+
+# Optional session examples. XWayland support is enabled by default.
+# https://docs.noctalia.dev/umbriel/configuration/#general
+[general]
+autostart = ["noctalia"]
+# xwayland = false
+# Sharp X11 apps and games on scaled outputs; they see physical resolutions.
+# xwayland_native_resolution = true
+# Umbriel announces the X11 interface scale and cursor theme through XSETTINGS.
+# Turn this off to run your own manager, such as xsettingsd.
+# xwayland_xsettings = false
+
+# ==============================================================================
+# Lid events
+
+# Remove the laptop panel from the desktop while the lid is closed, then
+# restore it when the lid opens. Replace eDP-1 with the name from
+# `umbriel outputs`.
+# https://docs.noctalia.dev/umbriel/configuration/#events
+# [events]
+# lid_close = "umbriel msg output-disable:eDP-1"
+# lid_open = "umbriel msg output-enable:eDP-1"
+
+# ==============================================================================
+# Screencast
+# By default, the first target-changing action during an active share asks for
+# confirmation. Disable that protection only if immediate keybind changes are
+# preferred.
+# https://docs.noctalia.dev/umbriel/configuration/#screencast
+# [screencast]
+# disable_dynamic_confirmation = true
+
+# ==============================================================================
+# Overview
+# Built-in overview and animation values are used. The top-left hot corner opens
+# the overview after a short delay.
+# Overview: https://docs.noctalia.dev/umbriel/workspaces-overview/
+# Animation: https://docs.noctalia.dev/umbriel/animation/
+[hot_corners.top_left]
+enabled = true
+delay_ms = 500
+action = "overview-open"
