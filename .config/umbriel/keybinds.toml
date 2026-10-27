@@ -6,10 +6,10 @@
 # Actions: https://docs.noctalia.dev/umbriel/actions/
 
 [keybinds]
-
 # Applications and session
-"Mod+Return" = { action = "spawn:kitty", repeat = false }
-"Mod" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+T" = { action = "spawn:kitty", repeat = false }
+"Mod+B" = { action = "spawn:brave", repeat = false }
+"Mod+S" = "spawn:noctalia msg panel-toggle launcher"
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
@@ -27,27 +27,25 @@
 "XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down", allow_when_locked = true }
 
 # Focus and movement
-"Mod+Left" = "window-focus-left"
-"Mod+Down" = "window-focus-down"
-"Mod+Up" = "window-focus-up"
-"Mod+Right" = "window-focus-right"
-"Mod+H" = "window-focus-left"
-"Mod+J" = "window-focus-down"
-"Mod+K" = "window-focus-up"
-"Mod+L" = "window-focus-right"
+"Mod+Left" = "window-focus-or-output-left"
+"Mod+Down" = "window-focus-or-output-down"
+"Mod+Up" = "window-focus-or-output-up"
+"Mod+Right" = "window-focus-or-output-right"
 "Mod+F1" = "window-focus-next"
-"Mod+Shift+Left" = "column-move-left"
-"Mod+Shift+Down" = "window-move-down"
-"Mod+Shift+Up" = "window-move-up"
-"Mod+Shift+Right" = "column-move-right"
+"Mod+Ctrl+Left" = "column-move-left"
+"Mod+Ctrl+Down" = "window-move-down"
+"Mod+Ctrl+Up" = "window-move-up"
+"Mod+Ctrl+Right" = "column-move-right"
+"Mod+Shift+Left" = "output-focus-left"
+"Mod+Shift+Right" = "output-focus-right"
 
 # Window state and layout
-"Mod+T" = { action = "window-toggle-floating", repeat = false }
-"Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
+"Mod+V" = { action = "window-toggle-floating", repeat = false }
+"Mod+Shift+V" = { action = "window-focus-switch-floating", repeat = false }
 "Mod+P" = { action = "window-toggle-pinned", repeat = false }
+"Mod+F" = { action = "window-toggle-maximize", repeat = true }
+"Mod+Shift+F" = { action = "window-toggle-fullscreen", repeat = false }
 "Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
-"Mod+F" = { action = "window-toggle-fullscreen", repeat = false }
-"Mod+Ctrl+F" = { action = "window-toggle-maximize", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
 "Mod+Comma" = "window-consume-left"
@@ -62,6 +60,7 @@
 "Mod+WheelUp" = "window-focus-left"
 "Mod+WheelDown" = "window-focus-right"
 "Mod+O" = { action = "overview-toggle", repeat = false }
+"Mod+N" = "workspace-set-layout:toggle:dwindle,scrolling"
 
 # Workspaces
 "Mod+1" = "workspace-switch:1"
@@ -82,11 +81,17 @@
 "Mod+Shift+7" = "window-move-to-workspace:7"
 "Mod+Shift+8" = "window-move-to-workspace:8"
 "Mod+Shift+9" = "window-move-to-workspace:9"
+"Mod+Ctrl+Page_Up" = "window-move-to-workspace-previous"
+"Mod+Ctrl+Page_Down" = "window-move-to-workspace-next"
+"Mod+Ctrl+KP_Page_Up" = "window-move-to-workspace-previous"
+"Mod+Ctrl+KP_Page_Down" = "window-move-to-workspace-next"
+"Mod+KP_Page_Up" = "workspace-previous"
+"Mod+KP_Page_Down" = "workspace-next"
+"Mod+Page_Up" = "workspace-previous"
+"Mod+Page_Down" = "workspace-next"
 
 # Scratchpad
 "Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
 "Mod+Space" = "scratchpad-toggle"
 "Mod+Ctrl+Space" = { action = "window-restore-from-scratchpad", repeat = false }
 "Mod+Tab" = "scratchpad-focus-next"
-
-

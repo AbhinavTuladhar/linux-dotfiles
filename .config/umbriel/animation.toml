@@ -6,3 +6,59 @@
 # effect = "workspace_wipe"
 # duration_ms = 300
 # curve = "easeout"
+
+[animation]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+
+[animation.windows_in]
+enabled = true
+curve = "spring:1,150"
+style = "zoom"
+scale = 0.5
+
+[animation.windows_out]
+enabled = true
+curve = "spring:1,150"
+style = "zoom"
+scale = 0.8
+
+[animation.windows_move]
+enabled = true
+curve = "spring:1,150"
+
+[animation.windows_resize]
+enabled = true
+curve = "spring:1,150"
+
+[animation.workspaces]
+style = "slide"
+enabled = true
+curve = "spring:1,150"
+
+[animation.overview]
+enabled = true
+curve = "spring:1,150"
+workspace_curve = "spring:1,150"
+
+[animation.scratchpad]
+enabled = true
+curve = "spring:1,150"
+dim = 0.8
+blur = false
+
+[animation.dialogs]
+enabled = true
+dim = 0.3
+
+[animation.border]
+enabled = true
+curve = "spring:1,150"
+
+[animation.dim_unfocused]
+enabled = false
+dim = 0.0
+
+[animation.layers]
+enabled = false
