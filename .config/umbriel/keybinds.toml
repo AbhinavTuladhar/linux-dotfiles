@@ -9,7 +9,14 @@
 # Applications and session
 "Mod+T" = { action = "spawn:kitty", repeat = false }
 "Mod+B" = { action = "spawn:brave", repeat = false }
+"Mod+E" = { action = "spawn:thunar", repeat = false }
+
 "Mod+S" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+L" = "spawn:noctalia msg session lock"
+"Mod+Alt+L" = "spawn:noctalia msg panel-toggle session"
+"Mod+X" = "spawn:noctalia msg settings-toggle"
+"Mod+D" = "spawn:noctalia msg panel-toggle control-center"
+"Mod+C" = "spawn:noctalia msg panel-toggle clipboard"
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
@@ -17,8 +24,8 @@
 # Media, volume and brightness keys from any input device, routed through the
 # Noctalia shell so its OSDs show. Safe while the session is locked.
 # https://docs.noctalia.dev/noctalia/compositor-settings/umbriel
-"XF86AudioRaiseVolume" = { action = "spawn:noctalia msg volume-up", allow_when_locked = true }
-"XF86AudioLowerVolume" = { action = "spawn:noctalia msg volume-down", allow_when_locked = true }
+"XF86AudioRaiseVolume" = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-", allow_when_locked = true }
 "XF86AudioMute" = { action = "spawn:noctalia msg volume-mute", allow_when_locked = true, repeat = false }
 "XF86AudioPlay" = { action = "spawn:noctalia msg media toggle", allow_when_locked = true, repeat = false }
 "XF86AudioNext" = { action = "spawn:noctalia msg media next", allow_when_locked = true }
@@ -48,10 +55,12 @@
 "Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
-"Mod+Comma" = "window-consume-left"
-"Mod+Period" = "window-consume-right"
-"Mod+Ctrl+Comma" = "window-consume-from-left"
-"Mod+Ctrl+Period" = "window-consume-from-right"
+# "Mod+Comma" = "window-consume-left"
+# "Mod+Period" = "window-consume-right"
+# "Mod+Ctrl+Comma" = "window-consume-from-left"
+# "Mod+Ctrl+Period" = "window-consume-from-right"
+"Mod+BracketLeft" = "window-consume-or-expel-left"
+"Mod+BracketRight" = "window-consume-or-expel-right"
 # Needs layout.mode = "dwindle".
 # "Mod+Alt+T" = "layout-toggle-split"
 "Mod+W" = { action = "column-toggle-tabbed", repeat = false }
@@ -89,9 +98,16 @@
 "Mod+KP_Page_Down" = "workspace-next"
 "Mod+Page_Up" = "workspace-previous"
 "Mod+Page_Down" = "workspace-next"
+"Mod+Shift+Ctrl+Left" = "window-move-to-output-left"
+"Mod+Shift+Ctrl+Right" = "window-move-to-output-right"
 
 # Scratchpad
-"Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
+"Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = true }
 "Mod+Space" = "scratchpad-toggle"
 "Mod+Ctrl+Space" = { action = "window-restore-from-scratchpad", repeat = false }
 "Mod+Tab" = "scratchpad-focus-next"
+
+# Misc
+"Mod+K" = "spawn:wl-kbptr -o modes=floating,click -o mode_floating.source=detect"
+"Mod+Alt+K" = "spawn:wl-kbptr"
+"Mod+Shift+K" = "spawn:wl-kbptr --drag"

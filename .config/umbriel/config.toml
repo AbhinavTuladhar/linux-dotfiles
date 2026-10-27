@@ -22,6 +22,10 @@ files = [
     'layers.toml',
     'outputs.toml',
     'windows.toml',
+    '/usr/share/umbriel/effects/cursor/trail/effect.toml',
+    '/usr/share/umbriel/effects/cursor/glow/effect.toml',
+    '/usr/share/umbriel/effects/border/audio/effect.toml',
+    '/usr/share/umbriel/effects/border/pulse/effect.toml',
 ]
 
 [include.optional]

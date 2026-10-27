@@ -27,3 +27,7 @@
 
 # [effects]
 # border = "pulse"
+
+[effects]
+cursor = "trail"
+border = 'pulse'

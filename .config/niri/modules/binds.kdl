@@ -286,10 +286,10 @@ binds {
 
     // For wl-kbptr
     // Floating mode
-    Mod+Alt+K { spawn-sh "wl-kbptr -o modes=floating,click -o mode_floating.source=detect"; }
+    Mod+K { spawn-sh "wl-kbptr -o modes=floating,click -o mode_floating.source=detect"; }
     
     // Tiling mode
-    Mod+K { spawn-sh "wl-kbptr"; }
+    Mod+Alt+K { spawn-sh "wl-kbptr"; }
 
     // Drag with tile and split 
     Mod+Shift+K { spawn-sh "wl-kbptr --drag"; }
